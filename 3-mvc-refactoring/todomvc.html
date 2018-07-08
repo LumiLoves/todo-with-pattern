@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>todo mvc</title>
+
+  <style>
+    body { padding: 20px; }
+    .todo-list {
+      border-radius: 10px;
+      background: #efefef; overflow: hidden;
+    }
+    .todo-list[data-open-status="true"] {
+      height: auto;
+    }
+    .todo-list[data-open-status="false"] {
+      height: 0px;
+    }
+    .todo-list li { padding: 10px; }
+    .collapsed-btn .action-txt { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <article class="todo-app">
+    <form class="user-form">
+      <label>
+        <span>할일입력</span>
+        <input type="text" name="todo" autocomplete="off">
+      </label>
+      <button type="submit">등록</button>      
+    </form>
+
+    
+    <h4>해야할 일들
+      <button type="button" class="collapsed-btn">
+        목록 <span class="action-txt">접기</span>
+      </button>
+    </h4>
+
+    <ol class="todo-list" data-open-status="true">
+      <!-- 템플릿으로 렌더링 <li>할</li> -->
+    </ol>
+  </article>
+
+  <script src="util.js"></script>
+  <script src="todomvc.js"></script>
+  <script src="todoviews.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
